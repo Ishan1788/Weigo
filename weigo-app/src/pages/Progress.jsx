@@ -1,9 +1,12 @@
 import { useWeightLogs } from '../hooks/useWeightLogs'
+import { useMeasurements } from '../hooks/useMeasurements'
 import { XAxis, YAxis, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts'
 import { TrendingDown, Calendar } from 'lucide-react'
+import BodySilhouette from '../components/silhouette/BodySilhouette'
 
 export default function Progress() {
   const { logs } = useWeightLogs()
+  const { latest, earliest } = useMeasurements()
 
   const chartData = [...logs].reverse().map(l => ({
     date: new Date(l.logged_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
@@ -31,6 +34,17 @@ export default function Progress() {
           <p className="text-2xl font-bold text-gray-900">{logs.length}</p>
           <p className="text-xs text-gray-500">Total entries</p>
         </div>
+      </div>
+
+      {/* Body silhouette overlay */}
+      <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-5">
+        <h2 className="text-sm font-semibold text-gray-900 mb-1">Body Composition</h2>
+        <p className="text-xs text-gray-400 mb-4">
+          {earliest && latest && earliest.id !== latest.id
+            ? `Comparing earliest vs latest measurements`
+            : 'Log measurements in Track to see your silhouette'}
+        </p>
+        <BodySilhouette current={latest} previous={earliest?.id !== latest?.id ? earliest : null} />
       </div>
 
       {/* Full chart */}
