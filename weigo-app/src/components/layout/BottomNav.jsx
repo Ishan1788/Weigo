@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Scale, UtensilsCrossed, Dumbbell, User } from 'lucide-react'
+import { LayoutDashboard, Scale, UtensilsCrossed, Dumbbell, Users, User } from 'lucide-react'
 
 const links = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Home' },
   { to: '/track', icon: Scale, label: 'Track' },
   { to: '/food', icon: UtensilsCrossed, label: 'Food' },
   { to: '/workout', icon: Dumbbell, label: 'Workout' },
+  { to: '/friends', icon: Users, label: 'Friends' },
   { to: '/profile', icon: User, label: 'Profile' },
 ]
 
@@ -23,8 +24,8 @@ export default function BottomNav() {
               }`
             }
           >
-            <Icon size={22} />
-            <span className="text-[10px] font-medium">{label}</span>
+            <Icon size={19} />
+            <span className="text-[9px] font-medium">{label}</span>
           </NavLink>
         ))}
       </div>

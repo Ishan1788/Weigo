@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Scale, UtensilsCrossed, TrendingUp, Dumbbell, User, LogOut } from 'lucide-react'
+import { LayoutDashboard, Scale, UtensilsCrossed, TrendingUp, Dumbbell, Users, User, LogOut } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 
 const links = [
@@ -8,6 +8,7 @@ const links = [
   { to: '/food', icon: UtensilsCrossed, label: 'Food Log' },
   { to: '/workout', icon: Dumbbell, label: 'Workout' },
   { to: '/progress', icon: TrendingUp, label: 'Progress' },
+  { to: '/friends', icon: Users, label: 'Friends' },
   { to: '/profile', icon: User, label: 'Profile' },
 ]
 

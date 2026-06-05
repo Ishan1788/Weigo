@@ -8,6 +8,7 @@ import Food from './pages/Food'
 import Progress from './pages/Progress'
 import Profile from './pages/Profile'
 import Workout from './pages/Workout'
+import Friends from './pages/Friends'
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
@@ -39,6 +40,7 @@ function AppRoutes() {
         <Route path="/food" element={<Food />} />
         <Route path="/workout" element={<Workout />} />
         <Route path="/progress" element={<Progress />} />
+        <Route path="/friends" element={<Friends />} />
         <Route path="/profile" element={<Profile />} />
       </Route>
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
