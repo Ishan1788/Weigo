@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, Scale, UtensilsCrossed, TrendingUp, User, LogOut } from 'lucide-react'
+import { LayoutDashboard, Scale, UtensilsCrossed, TrendingUp, Dumbbell, User, LogOut } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 
 const links = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/track', icon: Scale, label: 'Track' },
   { to: '/food', icon: UtensilsCrossed, label: 'Food Log' },
+  { to: '/workout', icon: Dumbbell, label: 'Workout' },
   { to: '/progress', icon: TrendingUp, label: 'Progress' },
   { to: '/profile', icon: User, label: 'Profile' },
 ]

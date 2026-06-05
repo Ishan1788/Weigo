@@ -7,6 +7,7 @@ import Track from './pages/Track'
 import Food from './pages/Food'
 import Progress from './pages/Progress'
 import Profile from './pages/Profile'
+import Workout from './pages/Workout'
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth()
@@ -36,6 +37,7 @@ function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/track" element={<Track />} />
         <Route path="/food" element={<Food />} />
+        <Route path="/workout" element={<Workout />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/profile" element={<Profile />} />
       </Route>
